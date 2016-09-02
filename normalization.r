@@ -23,4 +23,4 @@ if (length(rownames(dds)) == sum(rownames(dds) == names(genes_list)))
 {print("genes_list and dds have the same gene order")}
 rowRanges(dds) <- genes_list
 my.fpkm.from_normalized_counts <- fpkm(dds,robust = TRUE) #fpkm计算，输入文件为raw readcounts文件，robust=TRUE代表使用基于median ratio的方法进行fpkm的normalization
-write.table(cbind(genes,my.fpkm.from_normalized_counts),file="144_fpkm_from_normalized_counts_test.txt",sep="\t",quote=FALSE,row.names=FALSE)
+write.table(cbind(genes,my.fpkm.from_normalized_counts),file="normalized_counts_FPKM.txt",sep="\t",quote=FALSE,row.names=FALSE)
